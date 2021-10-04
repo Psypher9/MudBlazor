@@ -1,0 +1,11 @@
+﻿@namespace MudBlazor
+
+@inherits MudComponentBase
+
+<CascadingValue Value="this" IsFixed="true">
+        @foreach (var item in _contextMenus)
+        {
+            @item.Content
+        }
+</CascadingValue>
+
