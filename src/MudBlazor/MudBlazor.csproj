@@ -113,4 +113,8 @@
     <Watch Include="**/*.scss" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Watch Remove="Styles\components\_contextmenu.scss" />
+  </ItemGroup>
+
 </Project>

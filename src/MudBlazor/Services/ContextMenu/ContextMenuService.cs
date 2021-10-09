@@ -11,7 +11,7 @@ namespace MudBlazor
     public class ContextMenuService : IContextMenuService
     {
         internal event Action<ContextMenuReference> OnInstanceAdded;
-        internal event Action<ContextMenuReference> OnInstanceCloseRequested;
+        internal event Action<Guid> OnInstanceCloseRequested;
 
         public IContextMenuReference Open<T>(double x, double y) where T : ComponentBase, new()
         {
@@ -58,6 +58,6 @@ namespace MudBlazor
             return contextMenuRef;
         }
 
-        internal void Close(ContextMenuReference contextMenu) => OnInstanceCloseRequested?.Invoke(contextMenu);
+        public void Close(Guid id) => OnInstanceCloseRequested?.Invoke(id);
     }
 }

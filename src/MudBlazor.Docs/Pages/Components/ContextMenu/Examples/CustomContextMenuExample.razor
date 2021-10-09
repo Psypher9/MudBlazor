@@ -1,0 +1,19 @@
+﻿@inject IContextMenuService _contextMenus
+
+<MudGrid Justify="Justify.Center">
+	<MudItem xs="12">	
+		<MudContextualArea OnContextMenu="OpenCustomContextItem">
+			<MudPaper Class="pa-16 mx-2" Style="height: 200px;">
+				Context click here to see a fun image.
+			</MudPaper>
+		</MudContextualArea>
+	</MudItem>
+</MudGrid>
+
+@code {
+
+	public void OpenCustomContextItem(MouseEventArgs e)
+	{
+		_contextMenus.Open<CustomContextMenuExample_Menu>(e.ClientX, e.ClientY, x => { });
+	}
+}

@@ -127,7 +127,6 @@
     <Content Remove="excubowebcompiler.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Components\ContextMenu\" />
     <Folder Include="Pages\Components\NewFolder\" />
   </ItemGroup>
 
