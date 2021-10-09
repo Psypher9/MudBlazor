@@ -1,4 +1,5 @@
 ﻿@inject IContextMenuService _contextMenus
+@inject ISnackbar _snackbar
 
 <MudGrid Justify="Justify.Center">
 	<MudItem xs="12">	
@@ -14,6 +15,14 @@
 
 	public void OpenCustomContextItem(MouseEventArgs e)
 	{
-		_contextMenus.Open<CustomContextMenuExample_Menu>(e.ClientX, e.ClientY);
+		_contextMenus.Open<CustomMenuExample_Menu>(e.ClientX, e.ClientY, menu =>
+		{
+			menu.Navigate += PostMessage;
+		});
+	}
+
+	private void PostMessage(string message)
+	{
+		_snackbar.Add(message, Severity.Info);
 	}
 }

@@ -1,0 +1,14 @@
+﻿@inject ISnackbar _snackbars
+
+<MudPaper Width="250px" Class="py-3" Square="true">
+    <MudNavMenu>       
+        <MudNavLink Href="https://po.ta.to" Target="_blank">A Link to a Potato</MudNavLink>
+        <MudNavLink OnClick="@(() => Navigate("/components/menu"))">View Menus</MudNavLink>
+        <MudNavLink OnClick="@(() => Navigate("/components/list"))">View Lists</MudNavLink>
+        <MudNavLink OnClick="@(() => Navigate("/components/appbar"))">View App Bar</MudNavLink>
+    </MudNavMenu>
+</MudPaper>
+
+@code {
+	public Action<string> Navigate { get; set; }
+}

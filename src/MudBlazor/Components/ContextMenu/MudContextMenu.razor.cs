@@ -31,6 +31,7 @@ namespace MudBlazor
 
         [Parameter]
         public double X { get; set; }
+
         [Parameter]
         public double Y { get; set; }
 
@@ -39,10 +40,10 @@ namespace MudBlazor
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            if(firstRender)
+            if (firstRender)
             {
-                await menuContainer.MudFocusFirstAsync();
-            }
+                await menuContainer.MudFocusFirstAsync();            
+            }     
 
             await OnAfterRenderAsync(firstRender);
         }
