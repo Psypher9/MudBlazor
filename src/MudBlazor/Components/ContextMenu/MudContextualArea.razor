@@ -1,0 +1,7 @@
+﻿@namespace MudBlazor
+@inherits MudComponentBase
+
+<div @attributes="UserAttributes" class="@Class" style="@Style"
+     @oncontextmenu="OnContextMenu" @oncontextmenu:stopPropagation="true" @oncontextmenu:preventDefault="true">
+	 @ChildContent
+</div>
